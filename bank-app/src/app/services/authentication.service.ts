@@ -20,14 +20,14 @@ export class AuthenticationService {
     });
   }
 
-  // public register(username: string, email: string, password: string): void {
-  //   this.authenticationClient
-  //     .register(username, email, password)
-  //     .subscribe((token) => {
-  //       localStorage.setItem(this.tokenKey, token);
-  //       this.router.navigate(['/']);
-  //     });
-  // }
+  public register(name: string, username: string, password: string, role: string, email: string, ): void {
+    this.authenticationClient
+      .register(name, username, password, role, email)
+      .subscribe((token) => {
+        localStorage.setItem(this.tokenKey, token);
+        this.router.navigate(['/']);
+      });
+  }
 
   // public logout() {
   //   localStorage.removeItem(this.tokenKey);

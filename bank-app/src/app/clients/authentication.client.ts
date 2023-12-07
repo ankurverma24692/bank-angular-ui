@@ -19,19 +19,23 @@ export class AuthenticationClient {
     );
   }
 
-  // public register(
-  //   username: string,
-  //   email: string,
-  //   password: string
-  // ): Observable<string> {
-  //   return this.http.post(
-  //     environment.apiUrl + '/user/register',
-  //     {
-  //       username: username,
-  //       email: email,
-  //       password: password,
-  //     },
-  //     { responseType: 'text' }
-  //   );
-  // }
+  public register(
+    name: string,
+    username: string,
+    password: string,
+    role: string,
+    email: string, 
+  ): Observable<string> {
+    return this.http.post(
+      environment.apiUrl + '/bank/saveuser',
+      {
+        name: name,
+        username: username,
+        password: password,
+        role: role,
+        email: email,
+      },
+      { responseType: 'text' }
+    );
+  }
 }
